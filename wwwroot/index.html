@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <title>Szabó Attila - XKQCNV - Calculator</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="Content/Task1XKQCNV.css" />
+    <style>
+        /* Don't show the not-yet-loaded templates */
+        [ws-template], [ws-children-template] { display: none; }
+        
+        /*Ezt tudom nagyon csúnya ide berakni, de valamiért a .css és .js fájlok folyamatosan resetelnek, nem mentik el a változtatásokat buildelés közben*/
+        .title {
+            margin-bottom: 10px;
+            text-align: center;
+            width: 300px;
+            color: black;
+            border: solid black 2px;
+        }
+
+        #result-clr {
+            background-color: black;
+        }
+
+        input[type="button"] {
+            font-size: 125%;
+            background-color: #ebf7f7;
+            color: black;
+            border: solid black 2px;
+            width: 100%;
+        }
+
+        input[type="text"] {
+            font-size: 120%;
+            background-color: white;
+            border: solid black 2px;
+            width: 95%
+        }
+    </style>
+    <script type="text/javascript" src="Content/Task1XKQCNV.head.js">
+	</script>
+</head>
+<body>
+    <div id="main" ws-children-template="Main" class="title" style="
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 10%;
+    width: 400px;
+    height: 400px;
+
+    /*https://stackoverflow.com/questions/17333254/scale-the-contents-of-a-div-by-a-percentage*/
+    -moz-transform: scale(1.5);">
+        <h1>Szabó Attila - XKQCNV - Task 1</h1>
+        <table border="0" style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <td></td>
+                <td colspan="3"><input type="text" ws-var="Input" disabled /></td>
+                <td rowspan="2"><input type="text" ws-var="Equation" value="=" disabled style="height:60px;width: 60px;text-align: center;" /></td>
+                <td><input type="button" value="C" ws-onclick="Clear" style="background-color: red; color: white" /> </td>
+            </tr>
+            <tr>
+                <!--HTML colorpickerel szedett értékek*/-->
+                <td><input type="button" value="↑" ws-onclick="CopyResult" style="background-color:white;" /></td>
+                <td colspan="3"><input style="background-color:#ddded3;" type="text" ws-var="InputResult" disabled /></td>
+                <td><input type="button" value="AC" ws-onclick="AllClear" style="background-color:red;color:white" /> </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" ws-onclick="Add_1" value="1" /></td>
+                <td><input type="button" ws-onclick="Add_2" value="2" /></td>
+                <td><input type="button" ws-onclick="Add_3" value="3" /></td>
+                <td><input type="button" ws-onclick="Plus" value="+" /></td>
+                <td><input type="button" ws-onclick="Sin" value="Sin" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" ws-onclick="Add_4" value="4" /></td>
+                <td><input type="button" ws-onclick="Add_5" value="5" /></td>
+                <td><input type="button" ws-onclick="Add_6" value="6" /></td>
+                <td><input type="button" ws-onclick="Minus" value="-" /></td>
+                <td><input type="button" ws-onclick="Cos" value="Cos" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" ws-onclick="Add_7" value="7" /></td>
+                <td><input type="button" ws-onclick="Add_8" value="8" /></td>
+                <td><input type="button" ws-onclick="Add_9" value="9" /></td>
+                <td><input type="button" ws-onclick="Division" value="/" /></td>
+                <td><input type="button" ws-onclick="MultiplicativeInverse" value="1/x" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="1"><input type="button" ws-onclick="Calculate" value="=" style="background-color:green;color:white" /></td>
+                <td><input type="button" ws-onclick="Add_0" value="0" /></td>
+                <td><input type="button" ws-onclick="Add_comma" value="." /></td>
+                <td><input type="button" ws-onclick="Multiplication" value="*" /></td>
+            </tr>
+        </table>
+    </div>
+	<script type="text/javascript" src="Content/Task1XKQCNV.min.js"></script>
+</body>
+
+</html>
